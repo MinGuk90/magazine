@@ -1,10 +1,12 @@
 import React from 'react'
 
-const PostList = () => {
+import Post from '../components/Post'
+
+const PostList = (props) => {
   return (
-    <div>
-      
-    </div>
+    <React.Fragment>
+      <Post/>
+    </React.Fragment>
   )
 }
 
