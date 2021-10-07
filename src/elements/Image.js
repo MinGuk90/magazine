@@ -1,33 +1,33 @@
-import styled from "styled-components";
-import React from 'react'
+import styled from 'styled-components';
+import React from "react";
 
 const Image = (props) => {
-  const {shape, src, size} = props;
+    const {shape, src, size} = props;
 
-  const styles = {
-    src: src,
-    size: size,
-  }
+    const styles = {
+        src: src,
+        size: size,
+    }
 
-  if(shape === "circle") {
+    if(shape === "circle"){
+        return (
+            <ImageCircle {...styles}></ImageCircle>
+        )
+    }
+
+    if(shape === "rectangle"){
+        return (
+            <AspectOutter>
+                <AspectInner {...styles}></AspectInner>
+            </AspectOutter>
+        )
+    }
+
     return (
-      <ImageCircle {...styles}></ImageCircle>
+        <React.Fragment>
+            
+        </React.Fragment>
     )
-  }
-
-  if(shape === "rectangle") {
-    return (
-      <AspectOutter>
-        <AspectInner {...styles}></AspectInner>
-      </AspectOutter>
-    )
-  }
-
-  return (
-    <React.Fragment>
-      
-    </React.Fragment>
-  )
 }
 
 Image.defaultProps = {
@@ -37,28 +37,27 @@ Image.defaultProps = {
 };
 
 const AspectOutter = styled.div`
-  width: 100%;
-  min-width:250px;
+    width: 100%;
+    min-width: 250px;
 `;
 
 const AspectInner = styled.div`
-  position: relative;
-  padding-top: 75%;
-  overflow: hidden;
-  background-image: url("${(props) => props.src}");
-  background-size: cover;
-
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    background-image: url("${(props) => props.src}");
+    background-size: cover;
 `;
 
 const ImageCircle = styled.div`
-  --size ${(props) => props.size}px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: var(--size);
+    --size: ${(props) => props.size}px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
 
-  background-image: url("${(props)=> props.src}");
-  background-size: cover;
-  margin: 4px;
+    background-image: url("${(props) => props.src}");
+    background-size: cover;
+    margin: 4px;
 `;
 
 export default Image;

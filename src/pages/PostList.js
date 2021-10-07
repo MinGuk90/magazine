@@ -1,13 +1,16 @@
-import React from 'react'
+// PostList.js
+import React from "react";
 
-import Post from '../components/Post'
+import Post from "../components/Post";
 
 const PostList = (props) => {
-  return (
-    <React.Fragment>
-      <Post/>
-    </React.Fragment>
-  )
+
+    return (
+        <React.Fragment>
+            <Post/>
+        </React.Fragment>
+    )
 }
 
-export default PostList
+export default PostList;
+
