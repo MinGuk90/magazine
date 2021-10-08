@@ -16,7 +16,7 @@ const Signup = (props) => {
     if (id === "" || pwd === "" || user_name === "") {
       return;
     }
-    
+
     if (pwd !== pwd_check) {
       return;
     }
@@ -55,6 +55,7 @@ const Signup = (props) => {
           <Input
             label="비밀번호"
             placeholder="비밀번호를 입력해주세요."
+            type="password"
             _onChange={(e) => {
               setPwd(e.target.value);
             }}
@@ -65,6 +66,7 @@ const Signup = (props) => {
           <Input
             label="비밀번호 확인"
             placeholder="비밀번호를 다시 입력해주세요."
+            type="password"
             _onChange={(e) => {
               setPwdCheck(e.target.value);
             }}
